@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Dashboard - GitHub Analytics</title> 
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script>
+        tailwind.config = { 
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], 
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e', 
+                            900: '#0f172a', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'); 
+        [v-cloak] { display: none; } 
+        body { 
+            background-color: #020617; 
+            min-height: 100vh; 
+            color: #f8fafc; 
+            overflow-x: hidden; 
+        }
+        
+        /* Custom scrollbar styles to fit the dark theme */
+        ::-webkit-scrollbar {
+            width: 8px; 
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;  
+        }
+        
+        @keyframes shimmer { 
+            100% { transform: translateX(100%); } 
+        }
+    </style>
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body class="antialiased selection:bg-blue-500/30"> 
+    <div id="app" v-cloak> 
+    </div>
+    <script src="js/app.js" type="module"></script> 
+</body>
+</html>
