@@ -1,5 +1,5 @@
 import os 
-from flask import Flask, jsonify, request 
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS 
 from services.github_service import GitHubService 
 
@@ -11,7 +11,7 @@ github_service = GitHubService()
 
 @app.route("/")
 def serve_frontend():
-    return send_from_directory("../frontend", "index.html")
+    return send_from_directory(os.path.join(os.getcwd(), "frontend"), "index.html")
 
 @app.route('/api/user/<username>', methods=['GET']) 
 def get_user_data(username): 
