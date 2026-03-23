@@ -23,7 +23,7 @@ export default {
             
             try {
                 // Future Enhancement: Handle API URL using env/config
-                const response = await fetch(`https://github-analyzer-app.onrender.com/api/user/${username}`);
+                const response = await fetch(`https://github-analyzer-application.onrender.com/api/user/${username}`);
                 if (!response.ok) {
                     const errData = await response.json();
                     throw new Error(errData.error || 'Failed to fetch data. User might not exist.');
