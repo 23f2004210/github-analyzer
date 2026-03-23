@@ -9,6 +9,10 @@ CORS(app)
 # Initialize GitHub Service
 github_service = GitHubService() 
 
+@app.route("/")
+def serve_frontend():
+    return send_from_directory("../frontend", "index.html")
+
 @app.route('/api/user/<username>', methods=['GET']) 
 def get_user_data(username): 
     try: 
