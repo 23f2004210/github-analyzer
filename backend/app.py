@@ -4,7 +4,11 @@ from flask_cors import CORS
 from services.github_service import GitHubService 
 
 app = Flask(__name__) 
-CORS(app) 
+CORS(app, resources={
+    r"/*": {
+        "origins": "https://github-analyzer-frontend-9n40.onrender.com"
+    }
+})
 
 # Initialize GitHub Service
 github_service = GitHubService() 
